@@ -25,7 +25,7 @@ h1 { font-size:1.5rem; color:#1f2937; margin-bottom:0.25rem; }
 .rebal-box { background:linear-gradient(135deg,#dbeafe,#bfdbfe); border:2px solid #2563eb; }
 .rebal-box .info-value { color:#2563eb; }
 .rebal-countdown { font-size:0.72rem; color:#6b7280; font-weight:600; font-family:monospace; margin-top:2px; }
-.reminder-cta { display:block; margin-top:0.4rem; font-size:0.78rem; color:#dc2626; font-weight:700; }
+.reminder-cta { display:block; margin-top:0.4rem; font-size:0.78rem; color:#6b7280; font-weight:600; }
 /* Banners */
 .banner { display:flex; align-items:center; gap:1rem; padding:1rem 1.25rem; border-radius:10px; margin-bottom:1.25rem; font-size:0.92rem; line-height:1.5; }
 .banner-icon { font-size:2rem; flex-shrink:0; }
@@ -109,24 +109,24 @@ tr:hover { background:#dbeafe; }
 <body>
 <div class="page">
 <h1>📈 Trend Reaper</h1>
-<p class="subtitle">February 26, 2026</p>
+<p class="subtitle">Quantitative Strategy Tracker &bull; February 26, 2026</p>
 
 <div class="guide-section">
 <div class="guide-toggle" onclick="document.getElementById('guideContent').classList.toggle('hidden');this.querySelector('.arrow').classList.toggle('open');">
-<h2 style="margin:0;cursor:pointer;">📖 New here? How to use this report <span class="arrow">▶</span></h2>
+<h2 style="margin:0;cursor:pointer;">📖 New here? How to read this report <span class="arrow">▶</span></h2>
 </div>
 <div id="guideContent" class="hidden"><div class="guide-body">
-<div class="guide-step"><div class="step-num">1</div><div class="step-body"><strong>Check the Market Signal</strong><p>Look at the colored banner.</p><ul><li>🐂 <strong>Green = Bull</strong> → buy stocks.</li><li>🐻 <strong>Red = Bear</strong> → follow the yellow card instead.</li></ul></div></div>
-<div class="guide-step"><div class="step-num">2</div><div class="step-body"><strong>Match Your Portfolio to the List</strong><p><strong>Own exactly what's on the list, in equal amounts.</strong></p><ul><li>New stocks → Buy</li><li>Stocks that left → Sell</li><li>Still on list → Leave alone</li></ul><p class="step-note">Tap any ticker for Yahoo Finance. If banner turned red, sell all & follow yellow card.</p></div></div>
-<div class="guide-step"><div class="step-num">3</div><div class="step-body"><strong>Set a Reminder &amp; Repeat 📅</strong><p>See the <strong>Next Action Date</strong>? Set a calendar reminder now.</p></div></div>
+<div class="guide-step"><div class="step-num">1</div><div class="step-body"><strong>Check the Market Signal</strong><p>Look at the colored banner.</p><ul><li>🐂 <strong>Green = Bull</strong> — The model is tracking an equal-weight stock allocation.</li><li>🐻 <strong>Red = Bear</strong> — The model has shifted to a defensive position (see yellow card).</li></ul></div></div>
+<div class="guide-step"><div class="step-num">2</div><div class="step-body"><strong>Review the Model Portfolio</strong><p>The model targets equal-weight positions. On each update:</p><ul><li>New stocks → Added to model</li><li>Stocks that left → Removed from model</li><li>Still on list → Unchanged</li></ul><p class="step-note">Tap any ticker for Yahoo Finance.</p></div></div>
+<div class="guide-step"><div class="step-num">3</div><div class="step-body"><strong>Next Model Update 📅</strong><p>The algorithm will generate a new report on the date shown. Bookmark this page and check back.</p></div></div>
 <div class="guide-qr"><h3>Quick Reference</h3><div class="qr-row">
-<div class="qr-card qr-bull"><strong>🐂 Green (Bull)</strong><ol><li>Buy all stocks equally</li><li>Set reminder</li><li>Rebalance: sell exits, buy entrants</li></ol></div>
-<div class="qr-card qr-bear"><strong>🐻 Red (Bear)</strong><ol><li>Do NOT buy stocks</li><li>Follow yellow card</li><li>Keep checking on rebalance dates</li></ol></div>
+<div class="qr-card qr-bull"><strong>🐂 Green (Bull)</strong><ol><li>Model holds equal-weight stock positions</li><li>Updated on rebalance dates</li><li>Exiting stocks replaced with new entrants</li></ol></div>
+<div class="qr-card qr-bear"><strong>🐻 Red (Bear)</strong><ol><li>Model shifts to defensive asset</li><li>Listed stocks for reference only</li><li>Resumes stock allocation when conditions improve</li></ol></div>
 </div></div>
 <div class="guide-faq"><h3>FAQ</h3>
-<details><summary>How often do I check?</summary><p>Only on rebalance dates.</p></details>
-<details><summary>Do I buy ALL the stocks?</summary><p>Yes — equal amounts. Cherry-picking reduces benefit.</p></details>
-<details><summary>Stocks greyed out?</summary><p>Bear mode is active. Follow the yellow card.</p></details>
+<details><summary>How often is this updated?</summary><p>Only on rebalance dates shown in the report.</p></details>
+<details><summary>Why equal-weight positions?</summary><p>The model allocates equally by design to reduce concentration risk.</p></details>
+<details><summary>Stocks greyed out?</summary><p>The model is in bear/defensive mode. Listed stocks are for reference only.</p></details>
 </div>
 </div></div></div>
 
@@ -134,16 +134,16 @@ tr:hover { background:#dbeafe; }
 <div class="mkt-panel" id="mktPanel-SPY" style="display:block;">
 <div class="info-row">
 <div class="info-box"><div class="info-label">📅 Report Date</div><div class="info-value">February 26, 2026</div></div>
-<div class="info-box"><div class="info-label">🎯 Positions</div><div class="info-value">10 stocks</div></div>
-<div class="info-box rebal-box"><div class="info-label">🔄 Next Action Date</div>
+<div class="info-box"><div class="info-label">🎯 Tracked Equities</div><div class="info-value">10 stocks</div></div>
+<div class="info-box rebal-box"><div class="info-label">🔄 Next Model Update</div>
 <div class="info-value">April 27, 2026</div>
 <div class="rebal-countdown" data-iso="2026-04-27"></div>
-<span class="reminder-cta">⚠️ Set a calendar reminder!</span></div>
+<span class="reminder-cta">The model will rebalance on this date</span></div>
 </div>
-<div class="banner banner-bull"><div class="banner-icon">🐂</div><div class="banner-body"><strong>BULL MARKET — Invest</strong><br/>The market is healthy. Buy the 10 stocks listed below, dividing your money equally.</div></div>
+<div class="banner banner-bull"><div class="banner-icon">🐂</div><div class="banner-body"><strong>MARKET STATUS: BULL</strong><br/>The quantitative model currently indicates positive momentum. The model portfolio allocates equally across the 10 equities below.</div></div>
 
-<h2>📋 Your Stock Picks</h2>
-<p class="table-sub">Buy all of these in equal amounts.</p>
+<h2>📋 Current Model Allocation</h2>
+<p class="table-sub">The model targets an equal-weight distribution across these equities.</p>
 <table>
 <thead><tr><th style="width:45px;">#</th><th>Ticker</th><th>Company</th><th>Price</th></tr></thead>
 <tbody><tr><td><span class='rank rank-1'>1</span></td><td><strong><a href="https://finance.yahoo.com/quote/CIEN" target="_blank" class="ticker-link">CIEN</a></strong></td><td class='co-name'>Ciena</td><td class='price-col'>$353.33</td></tr><tr><td><span class='rank rank-2'>2</span></td><td><strong><a href="https://finance.yahoo.com/quote/WDC" target="_blank" class="ticker-link">WDC</a></strong></td><td class='co-name'>Western Digital</td><td class='price-col'>$290.95</td></tr><tr><td><span class='rank rank-3'>3</span></td><td><strong><a href="https://finance.yahoo.com/quote/ALB" target="_blank" class="ticker-link">ALB</a></strong></td><td class='co-name'>Albemarle Corporation</td><td class='price-col'>$195.87</td></tr><tr><td><span class='rank'>4</span></td><td><strong><a href="https://finance.yahoo.com/quote/GLW" target="_blank" class="ticker-link">GLW</a></strong></td><td class='co-name'>Corning Inc.</td><td class='price-col'>$160.43</td></tr><tr><td><span class='rank'>5</span></td><td><strong><a href="https://finance.yahoo.com/quote/LRCX" target="_blank" class="ticker-link">LRCX</a></strong></td><td class='co-name'>Lam Research</td><td class='price-col'>$249.48</td></tr><tr><td><span class='rank'>6</span></td><td><strong><a href="https://finance.yahoo.com/quote/TER" target="_blank" class="ticker-link">TER</a></strong></td><td class='co-name'>Teradyne</td><td class='price-col'>$342.82</td></tr><tr><td><span class='rank'>7</span></td><td><strong><a href="https://finance.yahoo.com/quote/AMAT" target="_blank" class="ticker-link">AMAT</a></strong></td><td class='co-name'>Applied Materials</td><td class='price-col'>$394.95</td></tr><tr><td><span class='rank'>8</span></td><td><strong><a href="https://finance.yahoo.com/quote/FIX" target="_blank" class="ticker-link">FIX</a></strong></td><td class='co-name'>Comfort Systems USA</td><td class='price-col'>$1,450.60</td></tr><tr><td><span class='rank'>9</span></td><td><strong><a href="https://finance.yahoo.com/quote/SNDK" target="_blank" class="ticker-link">SNDK</a></strong></td><td class='co-name'>Sandisk</td><td class='price-col'>$632.38</td></tr><tr><td><span class='rank'>10</span></td><td><strong><a href="https://finance.yahoo.com/quote/MU" target="_blank" class="ticker-link">MU</a></strong></td><td class='co-name'>Micron Technology</td><td class='price-col'>$429.00</td></tr></tbody>
@@ -152,16 +152,16 @@ tr:hover { background:#dbeafe; }
 </div><div class="mkt-panel" id="mktPanel-NIFTY" style="display:none;">
 <div class="info-row">
 <div class="info-box"><div class="info-label">📅 Report Date</div><div class="info-value">February 26, 2026</div></div>
-<div class="info-box"><div class="info-label">🎯 Positions</div><div class="info-value">10 stocks</div></div>
-<div class="info-box rebal-box"><div class="info-label">🔄 Next Action Date</div>
+<div class="info-box"><div class="info-label">🎯 Tracked Equities</div><div class="info-value">10 stocks</div></div>
+<div class="info-box rebal-box"><div class="info-label">🔄 Next Model Update</div>
 <div class="info-value">April 27, 2026</div>
 <div class="rebal-countdown" data-iso="2026-04-27"></div>
-<span class="reminder-cta">⚠️ Set a calendar reminder!</span></div>
+<span class="reminder-cta">The model will rebalance on this date</span></div>
 </div>
-<div class="banner banner-bull"><div class="banner-icon">🐂</div><div class="banner-body"><strong>BULL MARKET — Invest</strong><br/>The market is healthy. Buy the 10 stocks listed below, dividing your money equally.</div></div>
+<div class="banner banner-bull"><div class="banner-icon">🐂</div><div class="banner-body"><strong>MARKET STATUS: BULL</strong><br/>The quantitative model currently indicates positive momentum. The model portfolio allocates equally across the 10 equities below.</div></div>
 
-<h2>📋 Your Stock Picks</h2>
-<p class="table-sub">Buy all of these in equal amounts.</p>
+<h2>📋 Current Model Allocation</h2>
+<p class="table-sub">The model targets an equal-weight distribution across these equities.</p>
 <table>
 <thead><tr><th style="width:45px;">#</th><th>Ticker</th><th>Company</th><th>Price</th></tr></thead>
 <tbody><tr><td><span class='rank rank-1'>1</span></td><td><strong><a href="https://finance.yahoo.com/quote/NATIONALUM.NS" target="_blank" class="ticker-link">NATIONALUM</a></strong></td><td class='co-name'>National Aluminium Co. Ltd.</td><td class='price-col'>₹359.25</td></tr><tr><td><span class='rank rank-2'>2</span></td><td><strong><a href="https://finance.yahoo.com/quote/ATHERENERG.NS" target="_blank" class="ticker-link">ATHERENERG</a></strong></td><td class='co-name'>Ather Energy Ltd.</td><td class='price-col'>₹700.20</td></tr><tr><td><span class='rank rank-3'>3</span></td><td><strong><a href="https://finance.yahoo.com/quote/VEDL.NS" target="_blank" class="ticker-link">VEDL</a></strong></td><td class='co-name'>Vedanta Ltd.</td><td class='price-col'>₹735.00</td></tr><tr><td><span class='rank'>4</span></td><td><strong><a href="https://finance.yahoo.com/quote/FORCEMOT.NS" target="_blank" class="ticker-link">FORCEMOT</a></strong></td><td class='co-name'>Force Motors Ltd.</td><td class='price-col'>₹25,487.00</td></tr><tr><td><span class='rank'>5</span></td><td><strong><a href="https://finance.yahoo.com/quote/EICHERMOT.NS" target="_blank" class="ticker-link">EICHERMOT</a></strong></td><td class='co-name'>Eicher Motors Ltd.</td><td class='price-col'>₹8,124.50</td></tr><tr><td><span class='rank'>6</span></td><td><strong><a href="https://finance.yahoo.com/quote/INDIANB.NS" target="_blank" class="ticker-link">INDIANB</a></strong></td><td class='co-name'>Indian Bank</td><td class='price-col'>₹983.10</td></tr><tr><td><span class='rank'>7</span></td><td><strong><a href="https://finance.yahoo.com/quote/GVT&D.NS" target="_blank" class="ticker-link">GVT&D</a></strong></td><td class='co-name'>GE Vernova T&D India Ltd.</td><td class='price-col'>₹3,864.60</td></tr><tr><td><span class='rank'>8</span></td><td><strong><a href="https://finance.yahoo.com/quote/BANKINDIA.NS" target="_blank" class="ticker-link">BANKINDIA</a></strong></td><td class='co-name'>Bank of India</td><td class='price-col'>₹176.13</td></tr><tr><td><span class='rank'>9</span></td><td><strong><a href="https://finance.yahoo.com/quote/LTF.NS" target="_blank" class="ticker-link">LTF</a></strong></td><td class='co-name'>L&T Finance Ltd.</td><td class='price-col'>₹298.00</td></tr><tr><td><span class='rank'>10</span></td><td><strong><a href="https://finance.yahoo.com/quote/MCX.NS" target="_blank" class="ticker-link">MCX</a></strong></td><td class='co-name'>Multi Commodity Exchange of India Ltd.</td><td class='price-col'>₹2,452.00</td></tr></tbody>
@@ -171,11 +171,12 @@ tr:hover { background:#dbeafe; }
 
 <div class="disclaimer">
 <strong>⚠️ Important Disclaimers</strong><br/>
-<strong>Not financial advice.</strong> This report is for informational purposes only.<br/><br/>
-<strong>No guarantee of results.</strong> Past performance does not guarantee future results. All investments carry risk.<br/><br/>
+<strong>Not financial advice.</strong> This report is generated by a quantitative model and is published for informational and educational purposes only. It does not constitute investment advice, a recommendation, or a solicitation to buy or sell any securities. The publisher is not a registered investment advisor.<br/><br/>
+<strong>No guarantee of results.</strong> Past performance does not guarantee future results. All investments carry risk, including the possible loss of principal.<br/><br/>
+<strong>Model output, not personalized guidance.</strong> The information shown reflects a quantitative model's theoretical portfolio. It is not tailored to any individual's financial situation, risk tolerance, or investment objectives. Consult a qualified financial advisor before making any investment decisions.<br/><br/>
 <strong>Prices may be delayed.</strong> Verify with your broker before placing trades.
 </div>
-<div class="footer">Trend Reaper • Generated February 26, 2026 at 01:02 AM</div>
+<div class="footer">Trend Reaper • Generated February 26, 2026 at 01:10 AM</div>
 </div>
 <script>
 var tickerMap={"SPY":'CIEN, WDC, ALB, GLW, LRCX, TER, AMAT, FIX, SNDK, MU',"NIFTY":'NATIONALUM.NS, ATHERENERG.NS, VEDL.NS, FORCEMOT.NS, EICHERMOT.NS, INDIANB.NS, GVT&D.NS, BANKINDIA.NS, LTF.NS, MCX.NS'};
