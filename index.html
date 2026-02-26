@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Your Stock Picks — February 25, 2026</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, Arial, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 1.5rem;
+    -webkit-font-smoothing: antialiased;
+}
+.page {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);
+    padding: 2rem;
+}
+h1 {
+    font-size: 1.5rem;
+    color: #1f2937;
+    margin-bottom: 0.25rem;
+}
+.subtitle {
+    color: #9ca3af;
+    font-size: 0.85rem;
+    margin-bottom: 1.5rem;
+}
+/* ---- Info row ---- */
+.info-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+}
+.info-box {
+    flex: 1;
+    min-width: 140px;
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    padding: 0.85rem 1rem;
+}
+.info-label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #6b7280;
+    font-weight: 600;
+}
+.info-value {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #1f2937;
+}
+.rebal-box {
+    background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+    border: 2px solid #2563eb;
+}
+.rebal-box .info-value { color: #2563eb; }
+.rebal-countdown {
+    font-size: 0.72rem;
+    color: #6b7280;
+    font-weight: 600;
+    font-family: 'SF Mono', Monaco, 'Courier New', monospace;
+    margin-top: 2px;
+}
+.reminder-cta {
+    display: block;
+    margin-top: 0.4rem;
+    font-size: 0.78rem;
+    color: #dc2626;
+    font-weight: 700;
+}
+/* ---- Banners ---- */
+.banner {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.25rem;
+    border-radius: 10px;
+    margin-bottom: 1.25rem;
+    font-size: 0.92rem;
+    line-height: 1.5;
+}
+.banner-icon { font-size: 2rem; flex-shrink: 0; }
+.banner-bear {
+    background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);
+    border: 2px solid #dc2626;
+    color: #991b1b;
+}
+.banner-bull {
+    background: linear-gradient(135deg, #dcfce7 0%, #bbf7d0 100%);
+    border: 2px solid #16a34a;
+    color: #166534;
+}
+/* ---- Bear card ---- */
+.bear-card {
+    background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+    border: 2px solid #d97706;
+    border-radius: 12px;
+    padding: 1.5rem 2rem;
+    margin-bottom: 1.5rem;
+}
+.bear-card h2 { margin: 0 0 0.5rem; color: #92400e; font-size: 1.15rem; }
+.bear-card h2::before { display: none; }
+.bear-main { font-size: 1.05rem; color: #78350f; margin-bottom: 0.4rem; }
+.bear-detail { font-size: 0.92rem; color: #78350f; margin: 0.3rem 0; }
+.bear-shares { font-size: 1.6rem; font-weight: 800; color: #92400e; font-family: 'SF Mono', Monaco, monospace; }
+.bear-link { color: #92400e; font-weight: 700; }
+.bear-gap { font-size: 0.82rem; color: #92400e; margin-top: 0.5rem; }
+/* ---- Allocation ---- */
+.alloc-row {
+    display: flex;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+}
+.alloc-box {
+    flex: 1;
+    background: linear-gradient(135deg, #dcfce7 0%, #bbf7d0 100%);
+    border: 2px solid #16a34a;
+    border-radius: 10px;
+    padding: 1rem 1.25rem;
+    text-align: center;
+}
+.alloc-label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; color: #166534; font-weight: 600; }
+.alloc-value { font-size: 1.5rem; font-weight: 800; color: #16a34a; }
+/* ---- Section headings ---- */
+h2 {
+    color: #1f2937;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin: 1.5rem 0 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+h2::before {
+    content: '';
+    width: 4px;
+    height: 20px;
+    background: #2563eb;
+    border-radius: 2px;
+    flex-shrink: 0;
+}
+.table-sub { color: #6b7280; font-size: 0.85rem; margin-bottom: 0.5rem; }
+/* ---- Table ---- */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+th {
+    background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
+    color: #fff;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    letter-spacing: 0.06em;
+    padding: 10px 14px;
+    text-align: left;
+}
+td {
+    padding: 10px 14px;
+    border-bottom: 1px solid #e5e7eb;
+    text-align: left;
+}
+tr:nth-child(even) { background: #f9fafb; }
+tr:hover { background: #dbeafe; }
+.rank {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    font-weight: 700;
+    font-size: 0.82rem;
+    background: #e5e7eb;
+    color: #4b5563;
+}
+.rank-1 { background: linear-gradient(135deg, #fbbf24, #f59e0b); color: #fff; }
+.rank-2 { background: linear-gradient(135deg, #9ca3af, #6b7280); color: #fff; }
+.rank-3 { background: linear-gradient(135deg, #cd7c2e, #b45309); color: #fff; }
+.co-name { color: #6b7280; font-size: 0.82rem; max-width: 180px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.price-col { font-family: 'SF Mono', Monaco, 'Courier New', monospace; font-size: 0.85rem; white-space: nowrap; }
+.shares-col { text-align: right; }
+.sh-count { display: block; font-weight: 700; font-size: 1rem; color: #1f2937; font-family: 'SF Mono', Monaco, monospace; }
+.sh-amt { display: block; font-size: 0.7rem; color: #9ca3af; font-family: 'SF Mono', Monaco, monospace; }
+.ticker-link { color: #1f2937; text-decoration: none; border-bottom: 1px dashed #d1d5db; }
+.ticker-link:hover { color: #2563eb; border-color: #2563eb; }
+/* ---- Guide section ---- */
+.guide-section {
+    margin-bottom: 1.5rem;
+    border: 2px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 0;
+    background: #fafbfc;
+}
+.guide-toggle {
+    cursor: pointer;
+    padding: 0.85rem 1.25rem;
+    border-radius: 12px;
+    transition: background 0.15s;
+}
+.guide-toggle:hover { background: #f3f4f6; }
+.guide-toggle:hover h2 { color: #2563eb; }
+.arrow {
+    font-size: 0.8rem;
+    color: #9ca3af;
+    transition: transform 0.3s;
+    display: inline-block;
+}
+.arrow.open { transform: rotate(90deg); }
+.hidden { display: none; }
+.guide-body {
+    padding: 0 1.25rem 1.25rem;
+}
+.star-label {
+    display: inline-block;
+    font-size: 0.6rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 2px 6px;
+    border-radius: 3px;
+    margin-right: 4px;
+    vertical-align: middle;
+}
+.star-s { background: #dbeafe; color: #1d4ed8; }
+.star-t { background: #fef3c7; color: #92400e; }
+.star-a { background: #dcfce7; color: #166534; }
+.star-r { background: #f3e8ff; color: #7c3aed; }
+.guide-step {
+    display: flex;
+    gap: 1rem;
+    margin: 1.25rem 0;
+    align-items: flex-start;
+}
+.step-num {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    background: linear-gradient(135deg, #2563eb, #3b82f6);
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+.step-body { flex: 1; }
+.step-body strong { font-size: 1rem; color: #1f2937; }
+.step-body p { margin: 0.3rem 0; font-size: 0.88rem; color: #374151; line-height: 1.5; }
+.step-body ul, .step-body ol { margin: 0.3rem 0 0.3rem 1.25rem; font-size: 0.88rem; color: #374151; }
+.step-body li { margin: 0.15rem 0; }
+.step-note { font-size: 0.8rem; color: #6b7280; font-style: italic; }
+.guide-qr { margin-top: 1.5rem; }
+.guide-qr h3 { font-size: 1rem; color: #1f2937; margin-bottom: 0.5rem; }
+.qr-row { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+.qr-card {
+    flex: 1;
+    min-width: 200px;
+    padding: 1rem;
+    border-radius: 10px;
+    font-size: 0.85rem;
+}
+.qr-card ol { margin: 0.4rem 0 0 1.25rem; }
+.qr-card li { margin: 0.15rem 0; }
+.qr-bull { background: #dcfce7; border: 1px solid #16a34a; color: #166534; }
+.qr-bear { background: #fee2e2; border: 1px solid #dc2626; color: #991b1b; }
+.guide-faq { margin-top: 1.5rem; }
+.guide-faq h3 { font-size: 1rem; color: #1f2937; margin-bottom: 0.5rem; }
+.guide-faq details {
+    margin: 0.4rem 0;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 0;
+    overflow: hidden;
+}
+.guide-faq summary {
+    padding: 0.6rem 1rem;
+    font-weight: 600;
+    font-size: 0.88rem;
+    color: #1f2937;
+    cursor: pointer;
+    background: #f9fafb;
+}
+.guide-faq summary:hover { background: #f3f4f6; }
+.guide-faq details p {
+    padding: 0.5rem 1rem 0.75rem;
+    font-size: 0.85rem;
+    color: #374151;
+    margin: 0;
+}
+/* ---- Footer ---- */
+.footer {
+    text-align: center;
+    color: #9ca3af;
+    font-size: 0.78rem;
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e5e7eb;
+}
+/* ---- Responsive ---- */
+@media (max-width: 600px) {
+    body { padding: 0.75rem; }
+    .page { padding: 1.25rem; }
+    .info-row { flex-direction: column; }
+    .alloc-row { flex-direction: column; }
+    table { font-size: 0.8rem; }
+    th, td { padding: 7px 8px; }
+    .co-name { max-width: 100px; }
+}
+@media print {
+    body { background: #fff; padding: 0; }
+    .page { box-shadow: none; border-radius: 0; }
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+<h1>📈 Your Stock Picks</h1>
+<p class="subtitle">S&P 500 &bull; February 25, 2026</p>
+
+<div class="guide-section">
+<div class="guide-toggle" onclick="document.getElementById('guideContent').classList.toggle('hidden');this.querySelector('.arrow').classList.toggle('open');">
+<h2 style="margin:0;cursor:pointer;">📖 New here? How to use this report <span class="arrow">▶</span></h2>
+</div>
+<div id="guideContent" class="hidden">
+<div class="guide-body">
+
+<div class="guide-step">
+<div class="step-num">1</div>
+<div class="step-body">
+<strong>Check the Market Signal</strong>
+<p><span class="star-label star-s">Situation</span> A colored banner tells you the current market regime.</p>
+<p><span class="star-label star-t">Task</span> Decide whether to invest or protect your money.</p>
+<p><span class="star-label star-a">Action</span></p>
+<ul>
+<li>🐂 <strong>Green banner</strong> → The market is healthy. Proceed to Step 2 to buy stocks.</li>
+<li>🐻 <strong>Red banner</strong> → The market is in a downturn. Do NOT buy stocks. Follow the yellow safety card below it, then skip to Step 3.</li>
+</ul>
+<p><span class="star-label star-r">Result</span> You know whether to invest in stocks or move to safety.</p>
+</div>
+</div>
+
+<div class="guide-step">
+<div class="step-num">2</div>
+<div class="step-body">
+<strong>Buy the Stocks Listed</strong>
+<p><span class="star-label star-s">Situation</span> The market is in Bull mode and the table below shows your stock picks.</p>
+<p><span class="star-label star-t">Task</span> Build or adjust your portfolio to match the list.</p>
+<p><span class="star-label star-a">Action</span></p>
+<ul>
+<li><em>First time?</em> Divide your money equally among all stocks. The <strong>Shares</strong> column shows exactly how many to buy.</li>
+<li><em>Already invested?</em> Sell stocks that <strong>left</strong> the list, buy <strong>new</strong> entrants, leave the rest alone.</li>
+</ul>
+<p><span class="star-label star-r">Result</span> Your portfolio matches the latest recommendations. Tap any ticker to view it on Yahoo Finance.</p>
+</div>
+</div>
+
+<div class="guide-step">
+<div class="step-num">3</div>
+<div class="step-body">
+<strong>Set a Calendar Reminder 📅</strong>
+<p><span class="star-label star-s">Situation</span> The <strong>Next Action Date</strong> card above shows when to check back.</p>
+<p><span class="star-label star-t">Task</span> Make sure you don't miss it.</p>
+<p><span class="star-label star-a">Action</span> Set a phone/calendar reminder for that date <strong>right now</strong>.</p>
+<p><span class="star-label star-r">Result</span> You'll be reminded to get a fresh report and rebalance on time.</p>
+</div>
+</div>
+
+<div class="guide-step">
+<div class="step-num">4</div>
+<div class="step-body">
+<strong>On Rebalance Day — Repeat</strong>
+<p><span class="star-label star-s">Situation</span> Your reminder went off and you have a new report.</p>
+<p><span class="star-label star-t">Task</span> Update your holdings to match the new list.</p>
+<p><span class="star-label star-a">Action</span></p>
+<ol>
+<li>Check the banner — still green? If it turned red, sell stocks and follow the yellow card.</li>
+<li>Compare the new list to what you own: sell exits, buy new entrants, leave the rest.</li>
+<li>Set your next calendar reminder.</li>
+</ol>
+<p><span class="star-label star-r">Result</span> Your portfolio stays optimized. Repeat every cycle.</p>
+</div>
+</div>
+
+<div class="guide-qr">
+<h3>Quick Reference</h3>
+<div class="qr-row">
+<div class="qr-card qr-bull">
+<strong>🐂 Green (Bull)</strong>
+<ol><li>Buy all stocks equally</li><li>Set calendar reminder</li><li>On rebalance: sell exits, buy entrants</li></ol>
+</div>
+<div class="qr-card qr-bear">
+<strong>🐻 Red (Bear)</strong>
+<ol><li>Do NOT buy listed stocks</li><li>Follow yellow card (safety fund or cash)</li><li>Keep checking on rebalance dates</li></ol>
+</div>
+</div>
+</div>
+
+<div class="guide-faq">
+<h3>Common Questions</h3>
+<details><summary>How often do I check?</summary><p>Only on rebalance dates. Set a calendar reminder so you don't forget.</p></details>
+<details><summary>Do I buy ALL the stocks?</summary><p>Yes. The strategy works best with all of them in equal amounts. Cherry-picking reduces the benefit.</p></details>
+<details><summary>What if I have more/less money?</summary><p>Scale proportionally. $50K instead of $100K? Buy half the shares shown.</p></details>
+<details><summary>What does "rebalance" mean?</summary><p>Adjusting what you own to match the latest list. Sell exits, buy new ones, don't touch what stayed.</p></details>
+<details><summary>Stocks are greyed out / says "Watchlist"?</summary><p>Bear mode is active. Don't buy them. Follow the yellow card instead.</p></details>
+</div>
+
+</div>
+</div>
+</div>
+
+<div class="info-row">
+<div class="info-box">
+<div class="info-label">📅 Report Date</div>
+<div class="info-value">February 25, 2026</div>
+</div>
+<div class="info-box">
+<div class="info-label">🎯 Positions</div>
+<div class="info-value">10 stocks</div>
+</div>
+<div class="info-box rebal-box">
+<div class="info-label">🔄 Next Action Date</div>
+<div class="info-value">April 27, 2026</div>
+<div class="rebal-countdown" id="countdown"></div>
+<span class="reminder-cta">⚠️ Set a calendar reminder!</span>
+</div>
+</div>
+
+
+<div class="banner banner-bull">
+<div class="banner-icon">🐂</div>
+<div class="banner-body">
+<strong>BULL MARKET — Invest</strong><br/>
+The market is healthy. Buy the 10 stocks listed below, dividing your money equally.
+</div>
+</div>
+
+
+
+<div class="alloc-row">
+<div class="alloc-box">
+<div class="alloc-label">Your Portfolio</div>
+<div class="alloc-value">$100,000</div>
+</div>
+<div class="alloc-box">
+<div class="alloc-label">Per Stock (10 equal positions)</div>
+<div class="alloc-value">$10,000</div>
+</div>
+</div>
+
+
+<h2>📋 Your Stock Picks</h2>
+<p class="table-sub">Buy all of these in equal amounts.</p>
+<table>
+<thead>
+<tr>
+<th style="width:45px;">#</th>
+<th>Ticker</th>
+<th>Company</th>
+<th>Price</th>
+<th>Shares to Buy</th>
+</tr>
+</thead>
+<tbody>
+<tr><td><span class='rank rank-1'>1</span></td><td><strong><a href="https://finance.yahoo.com/quote/CIEN" target="_blank" class="ticker-link">CIEN</a></strong></td><td class='co-name'>Ciena</td><td class='price-col'>$353.33</td><td class="shares-col"><span class="sh-count">28</span><span class="sh-amt">$9,893</span></td></tr>
+<tr><td><span class='rank rank-2'>2</span></td><td><strong><a href="https://finance.yahoo.com/quote/WDC" target="_blank" class="ticker-link">WDC</a></strong></td><td class='co-name'>Western Digital</td><td class='price-col'>$290.95</td><td class="shares-col"><span class="sh-count">34</span><span class="sh-amt">$9,892</span></td></tr>
+<tr><td><span class='rank rank-3'>3</span></td><td><strong><a href="https://finance.yahoo.com/quote/ALB" target="_blank" class="ticker-link">ALB</a></strong></td><td class='co-name'>Albemarle Corporation</td><td class='price-col'>$195.87</td><td class="shares-col"><span class="sh-count">51</span><span class="sh-amt">$9,989</span></td></tr>
+<tr><td><span class='rank'>4</span></td><td><strong><a href="https://finance.yahoo.com/quote/GLW" target="_blank" class="ticker-link">GLW</a></strong></td><td class='co-name'>Corning Inc.</td><td class='price-col'>$160.43</td><td class="shares-col"><span class="sh-count">62</span><span class="sh-amt">$9,947</span></td></tr>
+<tr><td><span class='rank'>5</span></td><td><strong><a href="https://finance.yahoo.com/quote/LRCX" target="_blank" class="ticker-link">LRCX</a></strong></td><td class='co-name'>Lam Research</td><td class='price-col'>$249.48</td><td class="shares-col"><span class="sh-count">40</span><span class="sh-amt">$9,979</span></td></tr>
+<tr><td><span class='rank'>6</span></td><td><strong><a href="https://finance.yahoo.com/quote/TER" target="_blank" class="ticker-link">TER</a></strong></td><td class='co-name'>Teradyne</td><td class='price-col'>$342.82</td><td class="shares-col"><span class="sh-count">29</span><span class="sh-amt">$9,942</span></td></tr>
+<tr><td><span class='rank'>7</span></td><td><strong><a href="https://finance.yahoo.com/quote/FIX" target="_blank" class="ticker-link">FIX</a></strong></td><td class='co-name'>Comfort Systems USA</td><td class='price-col'>$1,450.60</td><td class="shares-col"><span class="sh-count">6</span><span class="sh-amt">$8,704</span></td></tr>
+<tr><td><span class='rank'>8</span></td><td><strong><a href="https://finance.yahoo.com/quote/AMAT" target="_blank" class="ticker-link">AMAT</a></strong></td><td class='co-name'>Applied Materials</td><td class='price-col'>$394.95</td><td class="shares-col"><span class="sh-count">25</span><span class="sh-amt">$9,874</span></td></tr>
+<tr><td><span class='rank'>9</span></td><td><strong><a href="https://finance.yahoo.com/quote/MU" target="_blank" class="ticker-link">MU</a></strong></td><td class='co-name'>Micron Technology</td><td class='price-col'>$429.00</td><td class="shares-col"><span class="sh-count">23</span><span class="sh-amt">$9,867</span></td></tr>
+<tr><td><span class='rank'>10</span></td><td><strong><a href="https://finance.yahoo.com/quote/SNDK" target="_blank" class="ticker-link">SNDK</a></strong></td><td class='co-name'>Sandisk</td><td class='price-col'>$632.38</td><td class="shares-col"><span class="sh-count">15</span><span class="sh-amt">$9,486</span></td></tr>
+</tbody>
+</table>
+
+<div class="footer">
+Report generated February 25, 2026 at 11:52 PM
+</div>
+
+</div>
+
+<script>
+(function() {
+    var d = '2026-04-27';
+    if (!d) return;
+    var el = document.getElementById('countdown');
+    if (!el) return;
+    function u() {
+        var now = new Date();
+        var t = new Date(d + 'T16:00:00');
+        var diff = t - now;
+        if (diff <= 0) { el.textContent = '⏰ Due now!'; el.style.color = '#dc2626'; return; }
+        var days = Math.floor(diff / 86400000);
+        var hrs = Math.floor((diff % 86400000) / 3600000);
+        el.textContent = days > 0 ? days + 'd ' + hrs + 'h remaining' : hrs + 'h remaining';
+    }
+    u();
+    setInterval(u, 60000);
+})();
+</script>
+</body>
+</html>
