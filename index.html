@@ -174,33 +174,19 @@ td { border-bottom:1px solid var(--gray-200); }
 </div></div></div>
 </div>
 
-<div class="mkt-tabs"><button class="mkt-tab active" data-mkt="SPY" onclick="switchMkt('SPY')">🇺🇸 US Market</button><button class="mkt-tab" data-mkt="NIFTY" onclick="switchMkt('NIFTY')">🇮🇳 India Market</button></div>
-<div class="mkt-panel" id="mktPanel-SPY" style="display:block;">
+
+<div class="mkt-panel" id="mktPanel-NIFTY" style="display:block;">
 <div class="info-row">
 <div class="info-box"><div class="info-label">🎯 Tracked Equities</div><div class="info-value">10 stocks</div></div>
 <div class="info-box"><div class="info-label">🗓️ Holding Period</div><div class="info-value">Model Holding Period: 60 Days</div></div>
 </div>
-<div class="banner banner-bull"><div class="banner-icon">🐂</div><div class="banner-body"><strong>MARKET STATUS: BULL</strong><br/>The quantitative model currently indicates positive momentum. The model portfolio allocates equally across the 10 equities below.</div></div>
+
 
 <h2>📋 Current Model Allocation</h2>
 <p class="table-sub">The model targets an equal-weight distribution across these equities.</p>
 <table>
 <thead><tr><th style="width:45px;">#</th><th>Ticker</th><th>Company</th></tr></thead>
-<tbody><tr><td><span class='rank rank-1'>1</span></td><td><strong>CIEN</strong></td><td class='co-name'>Ciena</td></tr><tr><td><span class='rank rank-2'>2</span></td><td><strong>WDC</strong></td><td class='co-name'>Western Digital</td></tr><tr><td><span class='rank rank-3'>3</span></td><td><strong>ALB</strong></td><td class='co-name'>Albemarle Corporation</td></tr><tr><td><span class='rank'>4</span></td><td><strong>GLW</strong></td><td class='co-name'>Corning Inc.</td></tr><tr><td><span class='rank'>5</span></td><td><strong>LRCX</strong></td><td class='co-name'>Lam Research</td></tr><tr><td><span class='rank'>6</span></td><td><strong>TER</strong></td><td class='co-name'>Teradyne</td></tr><tr><td><span class='rank'>7</span></td><td><strong>AMAT</strong></td><td class='co-name'>Applied Materials</td></tr><tr><td><span class='rank'>8</span></td><td><strong>FIX</strong></td><td class='co-name'>Comfort Systems USA</td></tr><tr><td><span class='rank'>9</span></td><td><strong>SNDK</strong></td><td class='co-name'>Sandisk</td></tr><tr><td><span class='rank'>10</span></td><td><strong>MU</strong></td><td class='co-name'>Micron Technology</td></tr></tbody>
-</table>
-<div class="actions-bar"><button class="action-btn action-btn-secondary" onclick="copyTickers('SPY')" title="Copy tickers">📋 Copy Tickers</button><span class="copy-feedback" id="copyFb-SPY">✓ Copied!</span></div>
-</div><div class="mkt-panel" id="mktPanel-NIFTY" style="display:none;">
-<div class="info-row">
-<div class="info-box"><div class="info-label">🎯 Tracked Equities</div><div class="info-value">10 stocks</div></div>
-<div class="info-box"><div class="info-label">🗓️ Holding Period</div><div class="info-value">Model Holding Period: 60 Days</div></div>
-</div>
-<div class="banner banner-bull"><div class="banner-icon">🐂</div><div class="banner-body"><strong>MARKET STATUS: BULL</strong><br/>The quantitative model currently indicates positive momentum. The model portfolio allocates equally across the 10 equities below.</div></div>
-
-<h2>📋 Current Model Allocation</h2>
-<p class="table-sub">The model targets an equal-weight distribution across these equities.</p>
-<table>
-<thead><tr><th style="width:45px;">#</th><th>Ticker</th><th>Company</th></tr></thead>
-<tbody><tr><td><span class='rank rank-1'>1</span></td><td><strong>NATIONALUM.NS</strong></td><td class='co-name'>National Aluminium Co. Ltd.</td></tr><tr><td><span class='rank rank-2'>2</span></td><td><strong>ATHERENERG.NS</strong></td><td class='co-name'>Ather Energy Ltd.</td></tr><tr><td><span class='rank rank-3'>3</span></td><td><strong>VEDL.NS</strong></td><td class='co-name'>Vedanta Ltd.</td></tr><tr><td><span class='rank'>4</span></td><td><strong>FORCEMOT.NS</strong></td><td class='co-name'>Force Motors Ltd.</td></tr><tr><td><span class='rank'>5</span></td><td><strong>EICHERMOT.NS</strong></td><td class='co-name'>Eicher Motors Ltd.</td></tr><tr><td><span class='rank'>6</span></td><td><strong>INDIANB.NS</strong></td><td class='co-name'>Indian Bank</td></tr><tr><td><span class='rank'>7</span></td><td><strong>GVT&D.NS</strong></td><td class='co-name'>GE Vernova T&D India Ltd.</td></tr><tr><td><span class='rank'>8</span></td><td><strong>BANKINDIA.NS</strong></td><td class='co-name'>Bank of India</td></tr><tr><td><span class='rank'>9</span></td><td><strong>LTF.NS</strong></td><td class='co-name'>L&T Finance Ltd.</td></tr><tr><td><span class='rank'>10</span></td><td><strong>MCX.NS</strong></td><td class='co-name'>Multi Commodity Exchange of India Ltd.</td></tr></tbody>
+<tbody><tr><td><span class='rank rank-1'>1</span></td><td><strong>NATIONALUM.NS</strong></td><td class='co-name'>National Aluminium Co. Ltd.</td></tr><tr><td><span class='rank rank-2'>2</span></td><td><strong>HINDCOPPER.NS</strong></td><td class='co-name'>Hindustan Copper Ltd.</td></tr><tr><td><span class='rank rank-3'>3</span></td><td><strong>MCX.NS</strong></td><td class='co-name'>Multi Commodity Exchange of India Ltd.</td></tr><tr><td><span class='rank'>4</span></td><td><strong>VEDL.NS</strong></td><td class='co-name'>Vedanta Ltd.</td></tr><tr><td><span class='rank'>5</span></td><td><strong>ATHERENERG.NS</strong></td><td class='co-name'>Ather Energy Ltd.</td></tr><tr><td><span class='rank'>6</span></td><td><strong>GVT&D.NS</strong></td><td class='co-name'>GE Vernova T&D India Ltd.</td></tr><tr><td><span class='rank'>7</span></td><td><strong>LTF.NS</strong></td><td class='co-name'>L&T Finance Ltd.</td></tr><tr><td><span class='rank'>8</span></td><td><strong>MUTHOOTFIN.NS</strong></td><td class='co-name'>Muthoot Finance Ltd.</td></tr><tr><td><span class='rank'>9</span></td><td><strong>LAURUSLABS.NS</strong></td><td class='co-name'>Laurus Labs Ltd.</td></tr><tr><td><span class='rank'>10</span></td><td><strong>FORCEMOT.NS</strong></td><td class='co-name'>Force Motors Ltd.</td></tr></tbody>
 </table>
 <div class="actions-bar"><button class="action-btn action-btn-secondary" onclick="copyTickers('NIFTY')" title="Copy tickers">📋 Copy Tickers</button><span class="copy-feedback" id="copyFb-NIFTY">✓ Copied!</span></div>
 </div>
@@ -230,7 +216,7 @@ td { border-bottom:1px solid var(--gray-200); }
 <div class="footer">Trend Reaper &copy; 2026 &bull; <a href="#" onclick="event.preventDefault();document.getElementById('termsSection2').classList.toggle('hidden');" style="color: inherit; text-decoration: underline;">Terms of Use</a> &bull; <a href="#" onclick="event.preventDefault();document.getElementById('privacySection2').classList.toggle('hidden');" style="color: inherit; text-decoration: underline;">Privacy Policy</a><br/><a href="https://www.linkedin.com/in/adaggarw/" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: underline;">Connect with the Creator on LinkedIn</a><br/><span style="font-size:0.7rem;color:#b0b0b0;">February 26, 2026</span></div>
 </div>
 <script>
-var tickerMap={"SPY":'CIEN, WDC, ALB, GLW, LRCX, TER, AMAT, FIX, SNDK, MU',"NIFTY":'NATIONALUM.NS, ATHERENERG.NS, VEDL.NS, FORCEMOT.NS, EICHERMOT.NS, INDIANB.NS, GVT&D.NS, BANKINDIA.NS, LTF.NS, MCX.NS'};
+var tickerMap={"NIFTY":'NATIONALUM.NS, HINDCOPPER.NS, MCX.NS, VEDL.NS, ATHERENERG.NS, GVT&D.NS, LTF.NS, MUTHOOTFIN.NS, LAURUSLABS.NS, FORCEMOT.NS'};
 function copyTickers(u) {
     var text = tickerMap[u] || '';
     navigator.clipboard.writeText(text).then(function() {
