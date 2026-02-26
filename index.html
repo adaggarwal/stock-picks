@@ -225,21 +225,6 @@ tr:hover { background: #dbeafe; }
 .guide-body {
     padding: 0 1.25rem 1.25rem;
 }
-.star-label {
-    display: inline-block;
-    font-size: 0.6rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    padding: 2px 6px;
-    border-radius: 3px;
-    margin-right: 4px;
-    vertical-align: middle;
-}
-.star-s { background: #dbeafe; color: #1d4ed8; }
-.star-t { background: #fef3c7; color: #92400e; }
-.star-a { background: #dcfce7; color: #166534; }
-.star-r { background: #f3e8ff; color: #7c3aed; }
 .guide-step {
     display: flex;
     gap: 1rem;
@@ -345,14 +330,12 @@ tr:hover { background: #dbeafe; }
 <div class="step-num">1</div>
 <div class="step-body">
 <strong>Check the Market Signal</strong>
-<p><span class="star-label star-s">Situation</span> A colored banner tells you the current market regime.</p>
-<p><span class="star-label star-t">Task</span> Decide whether to invest or protect your money.</p>
-<p><span class="star-label star-a">Action</span></p>
+<p>Look at the colored banner below.</p>
 <ul>
-<li>🐂 <strong>Green banner</strong> → The market is healthy. Proceed to Step 2 to buy stocks.</li>
-<li>🐻 <strong>Red banner</strong> → The market is in a downturn. Do NOT buy stocks. Follow the yellow safety card below it, then skip to Step 3.</li>
+<li>🐂 <strong>Green = Bull Market</strong> — buy the stocks in the table. → Go to Step 2.</li>
+<li>🐻 <strong>Red = Bear Market</strong> — do NOT buy the stocks. Follow the yellow card instead, then → skip to Step 3.</li>
 </ul>
-<p><span class="star-label star-r">Result</span> You know whether to invest in stocks or move to safety.</p>
+<p class="step-note">The yellow card tells you exactly what to buy (a safety fund) or to hold cash.</p>
 </div>
 </div>
 
@@ -360,14 +343,14 @@ tr:hover { background: #dbeafe; }
 <div class="step-num">2</div>
 <div class="step-body">
 <strong>Buy the Stocks Listed</strong>
-<p><span class="star-label star-s">Situation</span> The market is in Bull mode and the table below shows your stock picks.</p>
-<p><span class="star-label star-t">Task</span> Build or adjust your portfolio to match the list.</p>
-<p><span class="star-label star-a">Action</span></p>
+<p><em>First time?</em> Divide your money equally among all the stocks. The <strong>Shares</strong> column tells you exactly how many to buy.</p>
+<p><em>Already own stocks from a previous report?</em></p>
 <ul>
-<li><em>First time?</em> Divide your money equally among all stocks. The <strong>Shares</strong> column shows exactly how many to buy.</li>
-<li><em>Already invested?</em> Sell stocks that <strong>left</strong> the list, buy <strong>new</strong> entrants, leave the rest alone.</li>
+<li>Stocks that <strong>left</strong> the list → Sell them</li>
+<li><strong>New</strong> stocks that appeared → Buy them (use money from what you sold)</li>
+<li>Stocks <strong>still on</strong> the list → Leave them alone</li>
 </ul>
-<p><span class="star-label star-r">Result</span> Your portfolio matches the latest recommendations. Tap any ticker to view it on Yahoo Finance.</p>
+<p class="step-note">Tap any ticker symbol to view it on Yahoo Finance.</p>
 </div>
 </div>
 
@@ -375,10 +358,8 @@ tr:hover { background: #dbeafe; }
 <div class="step-num">3</div>
 <div class="step-body">
 <strong>Set a Calendar Reminder 📅</strong>
-<p><span class="star-label star-s">Situation</span> The <strong>Next Action Date</strong> card above shows when to check back.</p>
-<p><span class="star-label star-t">Task</span> Make sure you don't miss it.</p>
-<p><span class="star-label star-a">Action</span> Set a phone/calendar reminder for that date <strong>right now</strong>.</p>
-<p><span class="star-label star-r">Result</span> You'll be reminded to get a fresh report and rebalance on time.</p>
+<p>See the <strong>Next Action Date</strong> below? <strong>Set a reminder right now.</strong></p>
+<p>That's when you need to come back, get a fresh report, and make any needed trades.</p>
 </div>
 </div>
 
@@ -386,15 +367,12 @@ tr:hover { background: #dbeafe; }
 <div class="step-num">4</div>
 <div class="step-body">
 <strong>On Rebalance Day — Repeat</strong>
-<p><span class="star-label star-s">Situation</span> Your reminder went off and you have a new report.</p>
-<p><span class="star-label star-t">Task</span> Update your holdings to match the new list.</p>
-<p><span class="star-label star-a">Action</span></p>
 <ol>
 <li>Check the banner — still green? If it turned red, sell stocks and follow the yellow card.</li>
 <li>Compare the new list to what you own: sell exits, buy new entrants, leave the rest.</li>
 <li>Set your next calendar reminder.</li>
 </ol>
-<p><span class="star-label star-r">Result</span> Your portfolio stays optimized. Repeat every cycle.</p>
+<p class="step-note">That's it. Repeat every cycle.</p>
 </div>
 </div>
 
@@ -492,7 +470,7 @@ The market is healthy. Buy the 10 stocks listed below, dividing your money equal
 </table>
 
 <div class="footer">
-Report generated February 26, 2026 at 12:04 AM
+Report generated February 26, 2026 at 12:11 AM
 </div>
 
 </div>
