@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en"><head>
 <meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Trend Reaper — February 26, 2026</title>
+<title>Trend Reaper</title>
 <style>
 * { box-sizing:border-box; margin:0; padding:0; }
 body { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,Arial,sans-serif;
@@ -109,7 +109,7 @@ tr:hover { background:#dbeafe; }
 <body>
 <div class="page">
 <h1>📈 Trend Reaper</h1>
-<p class="subtitle">Quantitative Strategy Tracker &bull; February 26, 2026</p>
+<p class="subtitle">Quantitative Strategy Tracker</p>
 
 <div class="guide-section">
 <div class="guide-toggle" onclick="document.getElementById('guideContent').classList.toggle('hidden');this.querySelector('.arrow').classList.toggle('open');">
@@ -121,13 +121,12 @@ tr:hover { background:#dbeafe; }
 <div class="guide-qr"><h3>Quick Reference</h3><div class="qr-row">
 <div class="qr-card qr-bull"><strong>🐂 Green (Bull)</strong><ol><li>Model holds equal-weight stock positions</li><li>Updated on rebalance dates</li><li>Exiting stocks replaced with new entrants</li></ol></div>
 <div class="qr-card qr-bear"><strong>🐻 Red (Bear)</strong><ol><li>Model shifts to defensive asset</li><li>Listed stocks for reference only</li><li>Resumes stock allocation when conditions improve</li></ol></div>
-</div></div>
 </div></div></div>
+</div>
 
 <div class="mkt-tabs"><button class="mkt-tab active" data-mkt="SPY" onclick="switchMkt('SPY')">🇺🇸 US Market</button><button class="mkt-tab" data-mkt="NIFTY" onclick="switchMkt('NIFTY')">🇮🇳 India Market</button></div>
 <div class="mkt-panel" id="mktPanel-SPY" style="display:block;">
 <div class="info-row">
-<div class="info-box"><div class="info-label">📅 Report Date</div><div class="info-value">February 26, 2026</div></div>
 <div class="info-box"><div class="info-label">🎯 Tracked Equities</div><div class="info-value">10 stocks</div></div>
 </div>
 <div class="banner banner-bull"><div class="banner-icon">🐂</div><div class="banner-body"><strong>MARKET STATUS: BULL</strong><br/>The quantitative model currently indicates positive momentum. The model portfolio allocates equally across the 10 equities below.</div></div>
@@ -141,7 +140,6 @@ tr:hover { background:#dbeafe; }
 <div class="actions-bar"><button class="action-btn action-btn-secondary" onclick="copyTickers('SPY')" title="Copy tickers">📋 Copy Tickers</button><span class="copy-feedback" id="copyFb-SPY">✓ Copied!</span></div>
 </div><div class="mkt-panel" id="mktPanel-NIFTY" style="display:none;">
 <div class="info-row">
-<div class="info-box"><div class="info-label">📅 Report Date</div><div class="info-value">February 26, 2026</div></div>
 <div class="info-box"><div class="info-label">🎯 Tracked Equities</div><div class="info-value">10 stocks</div></div>
 </div>
 <div class="banner banner-bull"><div class="banner-icon">🐂</div><div class="banner-body"><strong>MARKET STATUS: BULL</strong><br/>The quantitative model currently indicates positive momentum. The model portfolio allocates equally across the 10 equities below.</div></div>
@@ -164,7 +162,7 @@ tr:hover { background:#dbeafe; }
 <strong>System limitations.</strong> The momentum algorithm driving these picks is based on historical data. Market dynamics change, and strategies that performed well in backtesting may fail or experience significant drawdowns in the future.<br/><br/>
 <strong>Model output, not personalized guidance.</strong> The information shown reflects a quantitative model's theoretical portfolio. It is not tailored to any individual's financial situation, risk tolerance, or investment objectives. Consult a qualified financial advisor before making any investment decisions.<br/><br/>
 </div>
-<div class="footer">Trend Reaper</div>
+<div class="footer">Trend Reaper &copy; 2026 &bull; <a href="terms.html" style="color: inherit; text-decoration: underline;">Terms of Use</a> &bull; <a href="privacy.html" style="color: inherit; text-decoration: underline;">Privacy Policy</a></div>
 </div>
 <script>
 var tickerMap={"SPY":'CIEN, WDC, ALB, GLW, LRCX, TER, AMAT, FIX, SNDK, MU',"NIFTY":'NATIONALUM.NS, ATHERENERG.NS, VEDL.NS, FORCEMOT.NS, EICHERMOT.NS, INDIANB.NS, GVT&D.NS, BANKINDIA.NS, LTF.NS, MCX.NS'};
