@@ -162,6 +162,24 @@ td { border-bottom:1px solid var(--gray-200); }
     .animate-row { animation:none !important; }
 }
 
+/* Performance metrics grid */
+.perf-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(140px, 1fr)); gap:0.75rem; margin-bottom:1.5rem; }
+.perf-card { background:#f9fafb; border-radius:10px; padding:1rem; text-align:center; border:1px solid #e5e7eb; }
+.perf-card.perf-highlight { background:linear-gradient(135deg, #dcfce7 0%, #bbf7d0 100%); border:2px solid #16a34a; }
+.perf-card.perf-warning { background:linear-gradient(135deg, #fee2e2 0%, #fecaca 100%); border:2px solid #dc2626; }
+.perf-icon { font-size:1.3rem; margin-bottom:0.2rem; }
+.perf-label { font-size:0.68rem; color:#6b7280; text-transform:uppercase; letter-spacing:0.05em; font-weight:600; }
+.perf-value { font-size:1.4rem; font-weight:700; color:#1f2937; }
+.perf-card.perf-highlight .perf-value { color:#16a34a; }
+.perf-card.perf-warning .perf-value { color:#dc2626; }
+.perf-positive { color:#16a34a; font-weight:600; }
+.perf-negative { color:#dc2626; font-weight:600; }
+/* Benchmark table */
+.bench-table { max-width:550px; }
+.bench-table td:first-child { font-weight:600; color:#374151; }
+/* Chart box */
+.chart-box { background:#f9fafb; border:1px solid #e5e7eb; border-radius:10px; padding:0.75rem; margin-bottom:1.5rem; }
+
 </style>
 </head>
 <body>
