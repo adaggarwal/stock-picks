@@ -169,35 +169,6 @@ td { border-bottom:1px solid var(--gray-200); }
 <h1>📈 Trend Reaper</h1>
 <p class="subtitle">Quantitative Strategy Tracker</p>
 
-<div class="guide-section">
-<div class="guide-toggle" onclick="document.getElementById('guideContent').classList.toggle('hidden');this.querySelector('.arrow').classList.toggle('open');">
-<h2 style="margin:0;cursor:pointer;">📖 New here? How to read this report <span class="arrow">▶</span></h2>
-</div>
-<div id="guideContent" class="hidden"><div class="guide-body">
-<div class="guide-step"><div class="step-num">1</div><div class="step-body"><strong>Check the Market Signal</strong><p>Look at the colored banner.</p><ul><li>🐂 <strong>Green = Bull</strong> — The model is tracking an equal-weight stock allocation.</li><li>🐻 <strong>Red = Bear</strong> — The model has shifted to a defensive position (see yellow card).</li></ul></div></div>
-<div class="guide-step"><div class="step-num">2</div><div class="step-body"><strong>Review the Model Portfolio</strong><p>The model targets equal-weight positions. On each update after the holding period:</p><ul><li>New stocks → Added to model</li><li>Stocks that left → Removed from model</li><li>Still on list → Unchanged</li></ul></div></div>
-<div class="guide-qr"><h3>Quick Reference</h3><div class="qr-row">
-<div class="qr-card qr-bull"><strong>🐂 Green (Bull)</strong><ol><li>Model holds equal-weight stock positions</li><li>Updated on rebalance dates</li><li>Exiting stocks replaced with new entrants</li></ol></div>
-<div class="qr-card qr-bear"><strong>🐻 Red (Bear)</strong><ol><li>Model shifts to defensive asset</li><li>Listed stocks for reference only</li><li>Resumes stock allocation when conditions improve</li></ol></div>
-</div></div></div>
-</div>
-
-<div class="guide-section" style="margin-top:1rem;">
-<div class="guide-toggle" onclick="document.getElementById('methodContent2').classList.toggle('hidden');this.querySelector('.arrow').classList.toggle('open');">
-<h2 style="margin:0;cursor:pointer;">🔬 About This Model <span class="arrow">▶</span></h2>
-</div>
-<div id="methodContent2" class="hidden"><div class="guide-body">
-<p>Trend Reaper is a <strong>rules-based quantitative model</strong> that ranks equities using a momentum scoring system. The model:</p>
-<ul>
-<li>Selects the top-ranked equities from each universe based on recent price momentum</li>
-<li>Uses a <strong>trend filter</strong> on the broad market index to determine bull or bear conditions</li>
-<li>Allocates to an equal-weight stock portfolio in bull markets, and shifts to a defensive asset in bear markets</li>
-<li>Rebalances on a fixed schedule (not in response to daily market moves)</li>
-</ul>
-<p style="font-size:0.8rem;color:#9ca3af;">The model is fully systematic — no discretionary overrides are applied. Detailed algorithm parameters are not disclosed.</p>
-</div></div>
-</div>
-
 <div class="mkt-tabs"><button class="mkt-tab active" data-mkt="SPY" onclick="switchMkt('SPY')">🇺🇸 US Market</button><button class="mkt-tab" data-mkt="NIFTY" onclick="switchMkt('NIFTY')">🇮🇳 India Market</button></div>
 <div class="mkt-panel" id="mktPanel-SPY" style="display:block;">
 <p class="data-date">Data as of <strong>March 25, 2026</strong> &bull; <em>S&P 500 — the 500 largest U.S. publicly traded companies.</em></p>
